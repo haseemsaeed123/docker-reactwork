@@ -6,4 +6,4 @@ before_install:
   - docker build -t haseemsaeed/docker-reactwork -f Dockerfile.dev .
 
 script:
-  - docker run haseemsaeed/docker-reactwork -- --coverage
+  - docker run haseemsaeed/docker-reactwork npm run test -- --coverage
