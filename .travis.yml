@@ -7,3 +7,20 @@ before_install:
 
 script:
   - docker run haseemsaeed/docker-reactwork npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-reactwork"
+  env: "DockerReactwork-env"
+  bucket_name: "elasticbeanstalk-us-east-2-494206218080"
+  bucket_path: "docker-reactwork"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+
+
+
